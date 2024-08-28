@@ -1,34 +1,28 @@
-'use client'
-import { backgroundColorChanger, changeToCircle, changeToNormal, decreaseMargin, moveMarginToLeft } from '@/redux/reduceSlice/boxSlice';
-import { Button, Input } from '@nextui-org/react';
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { createSlice } from '@reduxjs/toolkit'
 
-const Box = () => {
-   const dispatch = useDispatch();
-   const {  width, height,margin,borderRadius,backgroundColor } = useSelector((state) => state.box)
-   const handleChange=(event)=>{
-    if(event.key==="Enter"){
-      dispatch(backgroundColorChanger(event.target.value));
-    }
-   }
+export const boxSlice = createSlice({
+  name: 'box',
+  initialState: {
+    width: 40,
+    height: 40,
+    backgroundColor: 'red',
+    borderRadius: 0,
+    padding:20,
+    margin:20
+  },
+  reducers: {
+    changeToCircle: (state, action) => {
+       state.height=state.width
+       state.borderRadius= '50%'
+    },
+    increaseWidth: (state, action) => {
+      state.width++
+   },
     
-  return (
-    <div>
-        <div style={{backgroundColor: backgroundColor,margin: margin,width: width,height: height,borderRadius:borderRadius}}>
+  }
+})
 
-        </div>
-        <div><Input type='text' placeholder='backgroundCOlor: ' onKeyPress={handleChange} className='w-[20%] p-4 m-4' /></div>
-        <div>
-        <button onClick={()=> borderRadius===0?dispatch(changeToCircle()):dispatch(changeToNormal())} className='bg-slate-400 w-[15%] p-4 m-4'>Change to {borderRadius===0?'Circle':'Square'} </button>
-        <button onClick={()=> dispatch(moveMarginToLeft())} className='w-[15%] p-4 m-4 bg-slate-400'> Margin +</button>
-        <button onClick={()=> dispatch(decreaseMargin())} className='w-[15%] p-4 m-4 bg-slate-400'> Margin -</button>
 
-          
-        {/* <button onClick={()=> dispatch(increaseWidth())}>-</button> */}
-        </div>
-    </div>
-  )
-}
+export const { changeToCircle,increaseWidth } = boxSlice.actions
 
-export default Box
+export default boxSlice.reducer
