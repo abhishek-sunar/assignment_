@@ -23,10 +23,18 @@ export const boxSlice = createSlice({
       }
     },
     increaseWidth: (state, action) => {
-    state.width++
+      return {
+        ...state,
+        width: state.width+20,
+        height:  state.borderRadius=== '50%' ? state.width+20: state.height
+      }
     },
     decreaseWidth:(state,action) => {
-    state.width--
+      return {
+        ...state,
+        width: state.width-20,
+        height:  state.borderRadius=== '50%' ? state.width-20: state.height
+      }
     },
     changeBackgroundColor: (state, action) => {
     state.backgroundColor = action.payload
