@@ -30,9 +30,9 @@ export const login = () => (
       }}
     >
       {({ errors, touched, handleChange}) => (
-        <div className='flex justify-center'>    
-          <Card className='m-12 p-3'>
-            <CardBody className='flex gap-1'>
+        <div className='flex justify-center items-center bg-center bg-cover' style={{backgroundImage:"url('/backgroundImage.png')"}}>    
+          <Card className='flex m-12 p-3'>
+            <CardBody className='flex gap-1 shadow-2xl bg-orange-300 border-3 border-gray-900 rounded border-opacity-25 hover:bg-gray-500 '>
               <Form>
                 <Image
                   width={300}
@@ -54,17 +54,3 @@ export const login = () => (
   </div>
 );
 export default login
-
-
-
-
-
-// import React from 'react'
-
-// const page = () => {
-//   return (
-//     <div>home</div>
-//   )
-// }
-
-// export default page
