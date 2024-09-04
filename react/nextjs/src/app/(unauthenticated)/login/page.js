@@ -30,9 +30,9 @@ export const login = () => (
       }}
     >
       {({ errors, touched, handleChange}) => (
-        <div className='flex justify-center'>    
-          <Card className='m-12 p-3'>
-            <CardBody className='flex gap-1'>
+        <div className='flex justify-center items-center bg-cover bg-center' style= {{backgroundImage: "url('/backgroundImage.png')"}}>
+          <Card className='flex m-12 p-3'>
+            <CardBody className='flex gap-1 shadow-2xl bg-amber-300 border-3 border-white rounded border-opacity-2 hover:bg-emerald-700'>
               <Form>
                 <Image
                   width={300}
@@ -44,7 +44,7 @@ export const login = () => (
                 <Input name="password" className={errors.email ? 'border border-red-600 rounded-lg':null} onChange={handleChange} type="password" placeholder='Enter Your Password'/>
                 {errors.password && touched.password ? <div className='text-red-900 text-sm'>{errors.password}</div> : null}
                 <div className='flex justify-center' ><Button type="submit" onClick={"/home"} className='rgb(0,155,125)'>Login</Button></div>
-                <p>Don't have an account? <Link href="/register" className='rgb(255,191,93)'> Register</Link> instead.</p>
+                <p>Don't have an account? <Link href="/register" className='text-blue-800'> Register</Link> instead.</p>
               </Form>
             </CardBody>
           </Card>
