@@ -54,17 +54,3 @@ export const login = () => (
   </div>
 );
 export default login
-
-
-
-
-
-// import React from 'react'
-
-// const page = () => {
-//   return (
-//     <div>home</div>
-//   )
-// }
-
-// export default page
