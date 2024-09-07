@@ -30,7 +30,7 @@ export const login = () => (
       }}
     >
       {({ errors, touched, handleChange}) => (
-        <div className='flex justify-center items-center bg-cover bg-center' style= {{backgroundImage: "url('/backgroundImage.png')"}}>
+        <div className='flex justify-center items-center bg-cover bg-center'style= {{backgroundImage: "url('/backgroundImage.png')",width:500}}>
           <Card className='flex m-12 p-3'>
             <CardBody className='flex gap-1 shadow-2xl bg-amber-300 border-3 border-white rounded border-opacity-2 hover:bg-emerald-700'>
               <Form>
