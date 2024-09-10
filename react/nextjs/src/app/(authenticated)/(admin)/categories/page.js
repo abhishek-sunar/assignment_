@@ -1,10 +1,16 @@
-'use client'
 import React from 'react'
+import CategoriesList from './CategoriesList'
+import CategoryForm from './CategoryForm'
 
-const categories = () => {
+const Categories = async() => {
+    
+  
   return (
-    <div>categories</div>
+    <div className=''>
+        <CategoryForm/>
+        <CategoriesList/>
+    </div>
   )
 }
 
-export default categories
+export default Categories

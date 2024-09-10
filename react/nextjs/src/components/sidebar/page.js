@@ -1,3 +1,4 @@
+'use client'
 import { Listbox, ListboxItem } from '@nextui-org/react'
 import React from 'react'
 

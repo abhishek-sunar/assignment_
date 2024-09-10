@@ -1,13 +1,17 @@
-'use client'
 import Sidebar from '@/components/sidebar/page'
 import React from 'react'
+import { Toaster } from 'react-hot-toast'
 
-const Adminlayout = ({children}) => {
+const Adminlayout=({children})=> {
   return (
-    <div>
-    <Sidebar/>    
-    {children}</div>
+    
+    <div className='flex text-black bg-slate-50 shadow-lg rounded-lg' >
+      <Sidebar/>
+      <Toaster
+      position="top-center"
+      reverseOrder= {false}
+      />
+      {children} </div>
   )
 }
-
 export default Adminlayout
