@@ -1,17 +1,23 @@
-import Sidebar from '@/components/sidebar/page'
+import SideBar from '@/components/sidebar/page'
 import React from 'react'
 import { Toaster } from 'react-hot-toast'
 
-const Adminlayout=({children})=> {
+const AdminLayout = ({children}) => {
   return (
-    
-    <div className='flex text-black bg-slate-50 shadow-lg rounded-lg' >
-      <Sidebar/>
-      <Toaster
-      position="top-center"
-      reverseOrder= {false}
-      />
-      {children} </div>
+    <div >
+        <div className='flex'>
+        <SideBar/>
+        <Toaster
+            position="top-center"
+            reverseOrder={false}
+            />
+        {children}
+        </div>
+       
+   
+        
+        </div>
   )
 }
-export default Adminlayout
+
+export default AdminLayout
