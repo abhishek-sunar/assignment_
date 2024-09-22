@@ -12,11 +12,8 @@ const AdminLayout = ({children}) => {
             reverseOrder={false}
             />
         {children}
-        </div>
-       
-   
-        
-        </div>
+        </div>    
+    </div>
   )
 }
 
